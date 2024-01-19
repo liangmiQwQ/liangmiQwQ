@@ -11,6 +11,7 @@
   />
   <img src="https://github-readme-stats.vercel.app/api?username=liangmiqwq&show_icons=true" align=left style="margin-right:10px"/>
 </picture><p>Hello! I am a student from China, but I also like to develop code. Most of my project is open source on <a href="https://github.com/liangmiQwQ" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a></p><p>Of all field, I like frontend best. But backend is also OK for me. I'm tiro in this field, so I will work hard 😤</p><p>My mian project is <a href="https://github.com/MiRolls/MiRolls">MiRolls</a>, it's good system to help people build personal questionnaire. Currently my favorite technology stack is <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" /> + <img alt="Go" src="https://img.shields.io/badge/-Golang-E10098?style=flat-square&logo=Go&logoColor=white" /></p>
+
 **Something I like to use**:
 
 Frontend:
@@ -51,6 +52,7 @@ Backend:
   <img alt="Mysql"
     src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
   <img alt="Rust"
-    src="https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white" /> 
+    src="https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white" />
+
 **I like code, code like me, my spirit feels free**
 
