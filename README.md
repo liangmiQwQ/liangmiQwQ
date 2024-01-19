@@ -54,5 +54,5 @@ Backend:
   <img alt="Rust"
     src="https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white" />
 
-**I like code, code like me, my spirit feels free**
+**I love code, code love me, my spirit feels free**
 
