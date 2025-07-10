@@ -1,10 +1,10 @@
 ## Hi 🙋
 
-![GitHub Followers](https://img.shields.io/github/followers/liangmiQwQ?label=Follow%20%40liangmiQwQ&style=social)
-![GitHub Stars](https://img.shields.io/github/stars/liangmiQwQ?label=Stars&style=social)
-![Profile Views](https://komarev.com/ghpvc/?username=liangmiQwQ&label=Profile%20Views&color=blueviolet)
-![Bilibili](https://img.shields.io/badge/Bilibili-良米良米-FF69B4?style=flat&logo=bilibili&logoColor=white)
-![Bilibili Followers](https://img.shields.io/badge/dynamic/json?url=https://api.bilibili.com/x/relation/stat?vmid=1964165864&query=data.follower&label=Bilibili_Followers&color=FE7398&logo=bilibili&logoColor=white&cacheSeconds=3600)
+[![GitHub Followers](https://img.shields.io/github/followers/liangmiQwQ?label=Follow%20%40liangmiQwQ&style=social)](https://github.com/liangmiQwQ)
+[![GitHub Stars](https://img.shields.io/github/stars/liangmiQwQ?label=Stars&style=social)](https://github.com/liangmiQwQ?tab=repositories)
+[![Profile Views](https://komarev.com/ghpvc/?username=liangmiQwQ&label=Profile%20Views&color=blueviolet)](https://github.com/liangmiQwQ)
+[![Bilibili](https://img.shields.io/badge/Bilibili-良米良米-FF69B4?style=flat&logo=bilibili&logoColor=white)](https://space.bilibili.com/1964165864)
+[![Bilibili Followers](https://img.shields.io/badge/dynamic/json?url=https://api.bilibili.com/x/relation/stat?vmid=1964165864&query=data.follower&label=Bilibili_Followers&color=FE7398&logo=bilibili&logoColor=white&cacheSeconds=3600)](https://space.bilibili.com/1964165864)
 
 I am Liang Mi, also a player, student, developer or designer.
 
