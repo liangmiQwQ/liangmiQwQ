@@ -1,4 +1,8 @@
-## Hi 🙋
+## Hi 🙋 ![GitHub Followers](https://img.shields.io/github/followers/liangmiQwQ?label=Follow%20%40liangmiQwQ&style=social)
+
+![GitHub Stars](https://img.shields.io/github/stars/liangmiQwQ?label=Stars&style=social)
+![Profile Views](https://komarev.com/ghpvc/?username=liangmiQwQ&label=Profile%20Views&color=blueviolet)
+![Bilibili](https://img.shields.io/badge/B站-良米良米-FF69B4?style=flat&logo=bilibili&logoColor=white)
 
 I am Liang Mi, also a player, student, developer or designer.
 
@@ -25,9 +29,4 @@ I am Liang Mi, also a player, student, developer or designer.
 - Deploy
   Docker & Docker-Compose / Nginx, Redis / MySQL, MongoDB
 
-![GitHub Followers](https://img.shields.io/github/followers/liangmiQwQ?label=Follow%20%40liangmiQwQ&style=social)
-![GitHub Stars](https://img.shields.io/github/stars/liangmiQwQ?label=Stars&style=social)
-![Profile Views](https://komarev.com/ghpvc/?username=liangmiQwQ&label=Profile%20Views&color=blueviolet)
-
-![Bilibili](https://img.shields.io/badge/B站-1964165864-FF69B4?style=flat&logo=bilibili&logoColor=white)
 ![Bilibili Fans](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dbilibili%26queryKey%3D1964165864&query=%24.data.totalSubs&label=B站粉丝&color=FE7398&logo=bilibili&logoColor=white)
