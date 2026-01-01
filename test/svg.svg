@@ -1,0 +1,19 @@
+<!-- 独立的 SVG 文件 -->
+<svg width="694" height="188" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* 默认亮色模式 */
+    path { fill: #333333; }
+    
+    /* 暗黑模式 */
+    @media (prefers-color-scheme: dark) {
+      path { fill: #dddddd; }
+    }
+  </style>
+  
+   <foreignObject width="694" height="188">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>使用现代网页字体</h2>
+      <p>可以完美支持 variable fonts、连字等高级特性</p>
+    </div>
+  </foreignObject>
+</svg>
