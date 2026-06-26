@@ -31,7 +31,7 @@
   "scripts": {
     "build": "vp run cpack",
     "check": "vp run ccheck",
-    "dev": "vp run cpack && node bin/liangmiQwQ.mjs",
+    "dev": "node --watch scripts/dev.ts",
     "prepare": "vp config",
     "prepublishOnly": "vp run build",
     "release": "bumpp",
