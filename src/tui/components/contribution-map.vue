@@ -21,7 +21,7 @@ const contributionColors = ['blackBright', 'green', 'greenBright', 'green', 'gre
 </script>
 
 <template>
-  <Box flex-direction="column">
+  <Box flex-direction="column" background-color="gray">
     <Text bold color="green">GitHub Contributions</Text>
     <Text dim-color>53 x 7 placeholder</Text>
 

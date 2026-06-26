@@ -40,7 +40,7 @@ const projectColumnWidth = computed(() =>
     </Box>
   </Box>
 
-  <Box :margin-top="1">
+  <Box :margin-top="1" background-color="yellow">
     <ContributionMap />
   </Box>
 </template>
