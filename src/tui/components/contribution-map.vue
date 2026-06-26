@@ -6,6 +6,8 @@ import { useContributionMap } from '../use-contribution-map.ts'
 
 const { contributionRows } = useContributionMap()
 
+const contributionCellText = '  '
+
 const contributionCells = computed(() =>
   contributionRows.value.map(row =>
     Array.from(row, (level, column) => ({
@@ -36,7 +38,7 @@ const contributionColors = ['blackBright', 'green', 'greenBright', 'green', 'gre
           :background-color="cell.backgroundColor"
           aria-label="contribution cell"
         >
-          {{ ' ' }}
+          {{ contributionCellText }}
         </Text>
       </Box>
     </Box>

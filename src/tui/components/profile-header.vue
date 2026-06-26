@@ -21,7 +21,7 @@ defineProps<{
         <Text v-for="line in profile.nameArt" :key="line" bold color="green">{{ line }}</Text>
       </Box>
 
-      <Box flex-direction="column" width="26">
+      <Box flex-direction="column" :flex-grow="1" :flex-shrink="1">
         <Box flex-direction="row">
           <Text bold>{{ profile.name }}</Text>
           <Text dim-color> @{{ profile.handle }}</Text>
