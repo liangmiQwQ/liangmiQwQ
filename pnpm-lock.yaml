@@ -4,13 +4,16 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@vue-tui/runtime@0.1.0': 26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825
+
 importers:
 
   .:
     dependencies:
       '@vue-tui/runtime':
         specifier: 0.1.0
-        version: 0.1.0(vue@3.5.38(typescript@6.0.3))
+        version: 0.1.0(patch_hash=26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825)(vue@3.5.38(typescript@6.0.3))
       vue:
         specifier: ^3.5.38
         version: 3.5.38(typescript@6.0.3)
@@ -1848,7 +1851,7 @@ snapshots:
   '@voidzero-dev/vite-plus-win32-x64-msvc@0.2.1':
     optional: true
 
-  '@vue-tui/runtime@0.1.0(vue@3.5.38(typescript@6.0.3))':
+  '@vue-tui/runtime@0.1.0(patch_hash=26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825)(vue@3.5.38(typescript@6.0.3))':
     dependencies:
       '@alcalzone/ansi-tokenize': 0.3.0
       '@vue/runtime-core': 3.5.38

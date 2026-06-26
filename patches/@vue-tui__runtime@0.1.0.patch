@@ -1,0 +1,23 @@
+diff --git a/package.json b/package.json
+index 7846224ca23b6debaad1a9f05b4e360191c0340a..00d3f19c73dc088c45294acf15e6a42fb0fa1771 100644
+--- a/package.json
++++ b/package.json
+@@ -31,9 +31,16 @@
+     "LICENSE"
+   ],
+   "type": "module",
++  "types": "./dist/index.d.mts",
+   "exports": {
+-    ".": "./dist/index.mjs",
+-    "./internal": "./dist/internal.mjs",
++    ".": {
++      "types": "./dist/index.d.mts",
++      "default": "./dist/index.mjs"
++    },
++    "./internal": {
++      "types": "./dist/internal.d.mts",
++      "default": "./dist/internal.mjs"
++    },
+     "./package.json": "./package.json"
+   },
+   "publishConfig": {
