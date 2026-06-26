@@ -1,4 +1,3 @@
-// oxlint-disable-next-line liangmi/no-mixed-project
 import { cli } from '@liangmi/vp-config'
 import vue from '@vitejs/plugin-vue'
 
