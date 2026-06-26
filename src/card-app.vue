@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { Box, Text, useApp, useInput } from '@vue-tui/runtime'
+import { Box, useApp, useInput } from '@vue-tui/runtime'
+
+import ProfileFooter from './tui/components/profile-footer.vue'
+import ProfileHeader from './tui/components/profile-header.vue'
+import ProjectsSection from './tui/components/projects-section.vue'
+import { contacts, profile, projects } from './tui/profile.ts'
 
 const app = useApp()
 
@@ -11,18 +16,17 @@ useInput((input, key) => {
 </script>
 
 <template>
-  <Box border-style="round" flex-direction="column" :padding-x="2" :padding-y="1" :width="36">
-    <Box :height="3" />
-    <Box
-      :border-bottom="false"
-      :border-left="false"
-      :border-right="false"
-      border-style="single"
-      flex-direction="row"
-      :padding-top="1"
-    >
-      <Text bold> Liang </Text>
-      <Text dim-color> (liangmiQwQ) </Text>
+  <Box flex-direction="column" width="100%" height="100%">
+    <ProfileHeader :profile="profile" />
+
+    <Box flex-direction="column" :padding-y="1">
+      <ProjectsSection :projects="projects" />
     </Box>
+
+    <ProfileFooter
+      :contacts="contacts"
+      message="Feel free to reach me out"
+      exit-hint="Press q or Esc to exit."
+    />
   </Box>
 </template>
