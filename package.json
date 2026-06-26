@@ -46,11 +46,11 @@
     "@types/node": "^26.0.0",
     "@typescript/native-preview": "7.0.0-dev.20260624.1",
     "@vitejs/plugin-vue": "^6.0.7",
+    "@vue-tui/testing": "^0.0.3",
     "bumpp": "^11.1.0",
     "picocolors": "^1.1.1",
     "typescript": "^6.0.3",
-    "vite-plus": "^0.2.1",
-    "vitest": "4.1.9"
+    "vite-plus": "^0.2.1"
   },
   "devEngines": {
     "runtime": {

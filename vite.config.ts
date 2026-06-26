@@ -1,6 +1,10 @@
+// oxlint-disable-next-line liangmi/no-mixed-project
 import { cli } from '@liangmi/vp-config'
 import vue from '@vitejs/plugin-vue'
-import type { PackUserConfig } from 'vite-plus/pack'
+
+function createPackVuePlugins() {
+  return [vue()] as never
+}
 
 const config = cli({
   staged: {
@@ -10,7 +14,7 @@ const config = cli({
     ignorePatterns: ['./introduce.svg']
   },
   pack: {
-    plugins: [vue()] as unknown as PackUserConfig['plugins'],
+    plugins: createPackVuePlugins(),
     entry: ['./src/index.ts']
   }
 })

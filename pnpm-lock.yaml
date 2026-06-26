@@ -27,6 +27,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^6.0.7
         version: 6.0.7(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.38(typescript@6.0.3))
+      '@vue-tui/testing':
+        specifier: ^0.0.3
+        version: 0.0.3(vue@3.5.38(typescript@6.0.3))
       bumpp:
         specifier: ^11.1.0
         version: 11.1.0
@@ -42,9 +45,6 @@ importers:
       vite-plus:
         specifier: ^0.2.1
         version: 0.2.1(@types/node@26.0.1)(jiti@2.7.0)(typescript@6.0.3)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
-      vitest:
-        specifier: 4.1.9
-        version: 4.1.9(@types/node@26.0.1)(@vitest/browser-preview@4.1.9)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))
 
 packages:
 
@@ -739,9 +739,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@vue-tui/runtime@0.0.3':
+    resolution: {integrity: sha512-QUfhnLBsGCwShYJIyhQ5mCogl+MaCWF++zi7+DcbNwMoXR8x4LyHNDIGuQKWfqhgFDFwwMSexGD2AVNOGDE1Fw==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      vue: ^3.4.0
+
   '@vue-tui/runtime@0.1.0':
     resolution: {integrity: sha512-5hPvuNMqLJ4Q1s6EDEOIqAlKUd53GM58opBXqf6rtRfd+P2fhbvmysUiNQnS621+vIa/E9tQ7GS3tcKMlQJcrw==}
     engines: {node: '>=22.18.0'}
+    peerDependencies:
+      vue: ^3.4.0
+
+  '@vue-tui/testing@0.0.3':
+    resolution: {integrity: sha512-Gq3codthv1RbfOG+iqvRzQU29RfMIzU8cVoPKV8Ebq0WcmSaPMQvZfLMTDt/dD18jo/H4y2IVXDJTtgHF3+WFw==}
     peerDependencies:
       vue: ^3.4.0
 
@@ -1864,6 +1875,26 @@ snapshots:
   '@voidzero-dev/vite-plus-win32-x64-msvc@0.2.1':
     optional: true
 
+  '@vue-tui/runtime@0.0.3(vue@3.5.38(typescript@6.0.3))':
+    dependencies:
+      '@alcalzone/ansi-tokenize': 0.3.0
+      '@vue/runtime-core': 3.5.38
+      ansi-escapes: 7.3.0
+      chalk: 5.6.2
+      cli-boxes: 3.0.0
+      cli-truncate: 6.0.1
+      code-excerpt: 4.0.0
+      is-in-ci: 2.0.0
+      patch-console: 2.0.0
+      signal-exit: 4.1.0
+      slice-ansi: 9.0.0
+      stack-utils: 2.0.6
+      string-width: 8.2.1
+      terminal-size: 4.0.1
+      vue: 3.5.38(typescript@6.0.3)
+      wrap-ansi: 10.0.0
+      yoga-layout: 3.2.1
+
   '@vue-tui/runtime@0.1.0(vue@3.5.38(typescript@6.0.3))':
     dependencies:
       '@alcalzone/ansi-tokenize': 0.3.0
@@ -1883,6 +1914,11 @@ snapshots:
       vue: 3.5.38(typescript@6.0.3)
       wrap-ansi: 10.0.0
       yoga-layout: 3.2.1
+
+  '@vue-tui/testing@0.0.3(vue@3.5.38(typescript@6.0.3))':
+    dependencies:
+      '@vue-tui/runtime': 0.0.3(vue@3.5.38(typescript@6.0.3))
+      vue: 3.5.38(typescript@6.0.3)
 
   '@vue/compiler-core@3.5.38':
     dependencies:
