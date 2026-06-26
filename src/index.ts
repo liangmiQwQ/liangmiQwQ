@@ -1,5 +1,3 @@
-/// <reference types="node" />
-
 import { createApp, renderToString } from '@vue-tui/runtime'
 
 import { CardApp } from './card.ts'

@@ -2,7 +2,7 @@ import { cli } from '@liangmi/vp-config'
 import vue from '@vitejs/plugin-vue'
 import type { PackUserConfig } from 'vite-plus/pack'
 
-export default cli({
+const config = cli({
   staged: {
     '*': 'vp check --fix'
   },
@@ -14,3 +14,7 @@ export default cli({
     entry: ['./src/index.ts']
   }
 })
+
+config.lint!.plugins = config.lint?.plugins?.filter(e => e !== 'react')
+
+export default config

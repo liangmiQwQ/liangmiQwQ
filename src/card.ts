@@ -1,13 +1,13 @@
-import { Box, Text, useApp as getApp, useInput as onInput } from '@vue-tui/runtime'
+import { Box, Text, useApp, useInput } from '@vue-tui/runtime'
 import { defineComponent, h } from 'vue'
 
 export const CardApp = defineComponent({
   name: 'CardApp',
   setup() {
-    const app = getApp()
+    const app = useApp()
 
-    onInput((input, key) => {
-      if (key.escape || (key.ctrl && input === 'c')) {
+    useInput((input, key) => {
+      if (key.escape || input === 'q') {
         app.exit()
       }
     })
