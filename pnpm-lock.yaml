@@ -4,16 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@vue-tui/runtime@0.1.0': 26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825
-
 importers:
 
   .:
     dependencies:
       '@vue-tui/runtime':
-        specifier: 0.1.0
-        version: 0.1.0(patch_hash=26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825)(vue@3.5.38(typescript@6.0.3))
+        specifier: ^0.1.0
+        version: 0.1.0(vue@3.5.38(typescript@6.0.3))
       vue:
         specifier: ^3.5.38
         version: 3.5.38(typescript@6.0.3)
@@ -27,6 +24,9 @@ importers:
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260624.1
         version: 7.0.0-dev.20260624.1
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.7
+        version: 6.0.7(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.38(typescript@6.0.3))
       bumpp:
         specifier: ^11.1.0
         version: 11.1.0
@@ -577,6 +577,13 @@ packages:
     resolution: {integrity: sha512-ogwfNo1xuAutOF8RbTCo3Ut0q/65u2ucOeHizi6O14q+3vnelNS+u8qVC2QWXubMcwtuN5E9cbfPslvGC4kdwA==}
     engines: {node: '>=16.20.0'}
     hasBin: true
+
+  '@vitejs/plugin-vue@6.0.7':
+    resolution: {integrity: sha512-km+p+XdSz9Sxm5rqUbqcSfZYaAniKxWBj1KURl+Jr7UaPvvX7BmaWMdP69I5rrFDeQGyxAG7NXdc57vz+snhWg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
+      vue: ^3.2.25
 
   '@vitest/browser-preview@4.1.9':
     resolution: {integrity: sha512-a4/OrkMDb/WUnE4OOB/4FJbK3rYVO7YykqtUgcTKG4p2a0R3XcjPVu7SLRHFBs2+NIYhv5yxp1Lz3dbdGBjIow==}
@@ -1744,6 +1751,12 @@ snapshots:
       '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260624.1
       '@typescript/native-preview-win32-x64': 7.0.0-dev.20260624.1
 
+  '@vitejs/plugin-vue@6.0.7(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.38(typescript@6.0.3))':
+    dependencies:
+      '@rolldown/pluginutils': 1.0.1
+      vite: 8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0)
+      vue: 3.5.38(typescript@6.0.3)
+
   '@vitest/browser-preview@4.1.9(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))(vitest@4.1.9)':
     dependencies:
       '@testing-library/dom': 10.4.1
@@ -1851,7 +1864,7 @@ snapshots:
   '@voidzero-dev/vite-plus-win32-x64-msvc@0.2.1':
     optional: true
 
-  '@vue-tui/runtime@0.1.0(patch_hash=26991808a543557ad95c0072d995066f01535785f962a121a9ead90437e23825)(vue@3.5.38(typescript@6.0.3))':
+  '@vue-tui/runtime@0.1.0(vue@3.5.38(typescript@6.0.3))':
     dependencies:
       '@alcalzone/ansi-tokenize': 0.3.0
       '@vue/runtime-core': 3.5.38

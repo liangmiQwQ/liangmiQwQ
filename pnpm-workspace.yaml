@@ -1,4 +1,2 @@
 minimumReleaseAgeExclude:
   - '@liangmi/vp-config@0.2.0'
-patchedDependencies:
-  '@vue-tui/runtime@0.1.0': patches/@vue-tui__runtime@0.1.0.patch
