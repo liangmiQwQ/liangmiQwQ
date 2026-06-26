@@ -1,7 +1,7 @@
 import { renderToString } from '@vue-tui/runtime'
 import { describe, expect, it } from 'vitest'
 
-import { CardApp } from '../src/card.ts'
+import CardApp from '../src/card-app.vue'
 
 describe('card app', () => {
   it('renders the footer identity', () => {

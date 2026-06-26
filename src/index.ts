@@ -1,6 +1,6 @@
 import { createApp, renderToString } from '@vue-tui/runtime'
 
-import { CardApp } from './card.ts'
+import CardApp from './card-app.vue'
 
 if (!process.stdin.isTTY || !process.stdout.isTTY) {
   process.stdout.write(`${renderToString(CardApp)}\n`)

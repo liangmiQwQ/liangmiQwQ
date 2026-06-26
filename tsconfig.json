@@ -7,7 +7,7 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "types": ["node"],
+    "types": ["node", "vitest"],
     "strict": true,
     "noUnusedLocals": true,
     "declaration": true,
