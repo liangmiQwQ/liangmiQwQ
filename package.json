@@ -31,16 +31,22 @@
   "scripts": {
     "build": "vp run cpack",
     "check": "vp run ccheck",
-    "dev": "node src/index.ts",
+    "dev": "vp run cpack && node bin/liangmiQwQ.mjs",
     "prepare": "vp config",
     "prepublishOnly": "vp run build",
     "release": "bumpp",
     "test": "vp run ctest run"
   },
+  "dependencies": {
+    "@vue-tui/runtime": "^0.1.0",
+    "vue": "^3.5.38"
+  },
   "devDependencies": {
     "@liangmi/vp-config": "^0.2.0",
     "@types/node": "^26.0.0",
     "@typescript/native-preview": "7.0.0-dev.20260624.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue-tui/testing": "^0.0.3",
     "bumpp": "^11.1.0",
     "picocolors": "^1.1.1",
     "typescript": "^6.0.3",
