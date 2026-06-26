@@ -31,7 +31,7 @@
   "scripts": {
     "build": "vp run cpack",
     "check": "vp run ccheck",
-    "dev": "node scripts/dev.ts --watch",
+    "dev": "node --watch --watch-path=src --watch-path=scripts/dev.ts --watch-path=vite.config.ts --watch-path=tsconfig.json --watch-path=package.json scripts/dev.ts",
     "prepare": "vp config",
     "prepublishOnly": "vp run build",
     "release": "bumpp",
