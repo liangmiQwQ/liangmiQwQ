@@ -17,6 +17,7 @@ export interface Project {
 export interface Contact {
   readonly label: string
   readonly value: string
+  readonly href?: string
 }
 
 export const profile: Profile = {
@@ -29,14 +30,11 @@ export const profile: Profile = {
     '  ########  '
   ],
   nameArt: [
-    ' _     _                         ',
-    '| |   (_)                        ',
-    '| |    _  __ _ _ __   __ _       ',
-    "| |   | |/ _` | '_ \\ / _` |      ",
-    '| |___| | (_| | | | | (_| |      ',
-    String.raw`\_____/_|\__, |_| |_|\__, |      `,
-    '          __/ |       __/ |      ',
-    '         |___/       |___/       '
+    'LL       III     AAA    NN   NN   GGGG',
+    'LL        I     A   A   NNN  NN  GG   ',
+    'LL        I    AAAAAAA  NN N NN  GG GGG',
+    'LL        I    AA   AA  NN  NNN  GG  GG',
+    'LLLLLL   III   AA   AA  NN   NN   GGGG'
   ],
   name: 'Liang',
   handle: 'liangmiQwQ',
@@ -55,7 +53,7 @@ export const projects: readonly Project[] = [
 ]
 
 export const contacts: readonly Contact[] = [
-  { label: 'X', value: 'liangmiQwQ' },
-  { label: 'GitHub', value: 'liangmiQwQ' },
+  { label: 'X', value: 'liangmiQwQ', href: 'https://x.com/liangmiQwQ' },
+  { label: 'GitHub', value: 'liangmiQwQ', href: 'https://github.com/liangmiQwQ' },
   { label: 'Email', value: 'hi@liangmi.dev' }
 ]
