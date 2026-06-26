@@ -1,0 +1,57 @@
+{
+  "name": "liangmiQwQ",
+  "version": "0.0.0",
+  "description": "Hi, I'm Liang, a student developer who loves softwore and opensource, active in JavaScript ecosystem",
+  "keywords": [
+    "card",
+    "cli",
+    "npx"
+  ],
+  "homepage": "https://github.com/liangmiQwQ/liangmiQwQ#readme",
+  "license": "MIT",
+  "author": "Liang Mi <hi@liangmi.dev>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangmiQwQ/liangmiQwQ.git"
+  },
+  "bin": {
+    "liangmiQwQ": "./bin/liangmiQwQ.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp run cpack",
+    "check": "vp run ccheck",
+    "dev": "node src/index.ts",
+    "prepare": "vp config",
+    "prepublishOnly": "vp run build",
+    "release": "bumpp",
+    "test": "vp run ctest run"
+  },
+  "devDependencies": {
+    "@liangmi/vp-config": "^0.2.0",
+    "@types/node": "^26.0.0",
+    "@typescript/native-preview": "7.0.0-dev.20260624.1",
+    "bumpp": "^11.1.0",
+    "picocolors": "^1.1.1",
+    "typescript": "^6.0.3",
+    "vite-plus": "^0.2.1"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.18.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.5.0"
+}
