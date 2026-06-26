@@ -19,7 +19,7 @@ function createTerminalLink(text: string, href?: string) {
 </script>
 
 <template>
-  <Box flex-direction="column">
+  <Box flex-direction="column" background-color="red">
     <Box flex-direction="row" :gap="2">
       <Box v-for="contact in contacts" :key="contact.label" flex-direction="row">
         <Text>{{ contact.label }}: </Text>

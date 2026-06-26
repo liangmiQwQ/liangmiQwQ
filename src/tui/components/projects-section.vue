@@ -23,26 +23,24 @@ const projectColumnWidth = computed(() =>
 </script>
 
 <template>
-  <Box flex-direction="column">
-    <Text bold color="green">Projects</Text>
+  <Text bold color="green">Projects</Text>
 
-    <Box flex-direction="row" :gap="projectColumnGap">
-      <Box
-        v-for="(column, index) in projectColumns"
-        :key="index"
-        flex-direction="column"
-        :width="projectColumnWidth"
-      >
-        <Box v-for="project in column" :key="project.name" flex-direction="column" :margin-top="1">
-          <Text bold>{{ project.name }}</Text>
-          <Text v-if="project.description" dim-color>{{ project.description }}</Text>
-          <Text v-else dim-color>description placeholder</Text>
-        </Box>
+  <Box flex-direction="row" :gap="projectColumnGap">
+    <Box
+      v-for="(column, index) in projectColumns"
+      :key="index"
+      flex-direction="column"
+      :width="projectColumnWidth"
+    >
+      <Box v-for="project in column" :key="project.name" flex-direction="column" :margin-top="1">
+        <Text bold>{{ project.name }}</Text>
+        <Text v-if="project.description" dim-color>{{ project.description }}</Text>
+        <Text v-else dim-color>description placeholder</Text>
       </Box>
     </Box>
+  </Box>
 
-    <Box :margin-top="1">
-      <ContributionMap />
-    </Box>
+  <Box :margin-top="1">
+    <ContributionMap />
   </Box>
 </template>

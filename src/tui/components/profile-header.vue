@@ -9,9 +9,9 @@ defineProps<{
 </script>
 
 <template>
-  <Box flex-direction="row" :gap="1">
+  <Box flex-direction="row" :gap="1" background-color="red">
     <Box flex-direction="column">
-      <Box flex-direction="column" :padding-top="1">
+      <Box flex-direction="column" background-color="red">
         <Text v-for="line in profile.avatar" :key="line" color="cyan">{{ line }}</Text>
       </Box>
     </Box>

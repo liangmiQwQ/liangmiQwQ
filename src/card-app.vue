@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Box, useApp, useInput } from '@vue-tui/runtime'
+import { Box, useApp, useInput, useWindowSize } from '@vue-tui/runtime'
 
 import ProfileFooter from './tui/components/profile-footer.vue'
 import ProfileHeader from './tui/components/profile-header.vue'
@@ -13,13 +13,21 @@ useInput((input, key) => {
     app.exit()
   }
 })
+
+const { columns, rows } = useWindowSize()
 </script>
 
 <template>
-  <Box flex-direction="column" width="100%" height="100%">
+  <Box
+    flex-direction="column"
+    :padding="1"
+    :height="rows"
+    :width="columns"
+    justify-content="space-between"
+  >
     <ProfileHeader :profile="profile" />
 
-    <Box flex-direction="column" :padding-y="1">
+    <Box flex-direction="column" :flex-grow="1" :margin-y="2" background-color="blue">
       <ProjectsSection :projects="projects" />
     </Box>
 
