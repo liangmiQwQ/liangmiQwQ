@@ -1,2 +1,4 @@
 minimumReleaseAgeExclude:
   - '@liangmi/vp-config@0.2.0'
+overrides:
+  '@vue-tui/testing>@vue-tui/runtime': 0.1.0
