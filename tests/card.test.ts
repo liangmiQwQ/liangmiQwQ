@@ -9,6 +9,7 @@ import {
   createKittyPlaceholderLines,
   supportsKittyImageRendering
 } from '../src/tui/kitty-image.ts'
+import { detectTerminalColorScheme, getContributionMapTheme } from '../src/tui/terminal-theme.ts'
 
 afterEach(() => {
   cleanup()
@@ -93,6 +94,17 @@ function createContributionCalendarHtml() {
     <table>${days}</table>
   `
 }
+
+describe('terminal theme detection', () => {
+  it('uses terminal background hints and explicit overrides for contribution colors', () => {
+    expect(detectTerminalColorScheme({ COLORFGBG: '0;15' })).toBe('light')
+    expect(detectTerminalColorScheme({ COLORFGBG: '15;0' })).toBe('dark')
+    expect(detectTerminalColorScheme({ COLORFGBG: '15;0', LIANGMIQWQ_COLOR_SCHEME: 'light' })).toBe(
+      'light'
+    )
+    expect(getContributionMapTheme({ COLORFGBG: '0;15' }).contributionColors[0]).toBe('#ebedf0')
+  })
+})
 
 describe('kitty image rendering', () => {
   it('builds chunked PNG transfer commands for virtual placements', () => {

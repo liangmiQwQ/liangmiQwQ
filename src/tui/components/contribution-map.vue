@@ -2,16 +2,16 @@
 import { Box, Text } from '@vue-tui/runtime'
 import { computed } from 'vue'
 
+import { getContributionMapTheme } from '../terminal-theme.ts'
 import { useContributionMap } from '../use-contribution-map.ts'
 
 const { contributionCalendar, errorMessage, isLoading } = useContributionMap()
+const theme = getContributionMapTheme()
 
 const contributionCellText = '  '
 const skeletonWeekCount = 53
 
 const weekdayLabels = ['    ', 'Mon ', '    ', 'Wed ', '    ', 'Fri ', '    '] as const
-const contributionColors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'] as const
-const skeletonColor = '#30363d'
 
 const skeletonRows = Array.from({ length: 7 }, (_, rowIndex) =>
   Array.from({ length: skeletonWeekCount }, (_, columnIndex) => ({
@@ -48,7 +48,7 @@ const contributionCells = computed(() =>
   visibleRows.value.map(row =>
     row.map(day => ({
       key: day.date,
-      backgroundColor: isLoading.value ? skeletonColor : contributionColors[day.level]
+      backgroundColor: isLoading.value ? theme.skeletonColor : theme.contributionColors[day.level]
     }))
   )
 )
@@ -83,7 +83,7 @@ const contributionCells = computed(() =>
     <Box flex-direction="row" :margin-top="1">
       <Text dim-color>Less </Text>
       <Text
-        v-for="color in contributionColors"
+        v-for="color in theme.contributionColors"
         :key="color"
         :background-color="color"
         aria-label="contribution legend level"
