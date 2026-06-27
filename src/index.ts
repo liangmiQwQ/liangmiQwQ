@@ -1,6 +1,7 @@
 import { createApp, renderToString } from '@vue-tui/runtime'
 
 import CardApp from './card-app.vue'
+import { loadTerminalColorScheme } from './tui/terminal-theme.ts'
 import { loadContributionCalendar } from './tui/use-contribution-map.ts'
 
 if (!process.stdin.isTTY || !process.stdout.isTTY) {
@@ -20,6 +21,8 @@ if (!process.stdin.isTTY || !process.stdout.isTTY) {
   process.stdout.write(`${renderToString(CardApp)}\n`)
   process.exit(0)
 }
+
+await loadTerminalColorScheme()
 
 const app = createApp(CardApp)
 

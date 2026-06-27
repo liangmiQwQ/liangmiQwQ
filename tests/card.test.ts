@@ -1,3 +1,5 @@
+import { PassThrough } from 'node:stream'
+
 import { cleanup, render } from '@vue-tui/testing'
 import { afterEach, describe, expect, it, vi } from 'vite-plus/test'
 
@@ -9,7 +11,11 @@ import {
   createKittyPlaceholderLines,
   supportsKittyImageRendering
 } from '../src/tui/kitty-image.ts'
-import { detectTerminalColorScheme, getContributionMapTheme } from '../src/tui/terminal-theme.ts'
+import {
+  detectTerminalColorScheme,
+  getContributionMapTheme,
+  loadTerminalColorScheme
+} from '../src/tui/terminal-theme.ts'
 
 afterEach(() => {
   cleanup()
@@ -103,6 +109,46 @@ describe('terminal theme detection', () => {
       'light'
     )
     expect(getContributionMapTheme({ COLORFGBG: '0;15' }).contributionColors[0]).toBe('#ebedf0')
+  })
+
+  it('queries the terminal background when no environment hint exists', async () => {
+    const stdin = new PassThrough() as PassThrough & {
+      isRaw: boolean
+      isTTY: boolean
+      setRawMode: (mode: boolean) => void
+    }
+    const setRawMode = vi.fn<(mode: boolean) => void>(mode => {
+      stdin.isRaw = mode
+    })
+    const stdout = {
+      isTTY: true,
+      write: vi.fn<(data: string) => boolean>(data => {
+        if (data === '\u001B]11;?\u0007') {
+          queueMicrotask(() => {
+            stdin.write('\u001B]11;rgb:ffff/ffff/ffff\u0007')
+          })
+        }
+
+        return true
+      })
+    }
+
+    stdin.isRaw = false
+    stdin.isTTY = true
+    stdin.setRawMode = setRawMode
+
+    await expect(
+      loadTerminalColorScheme({
+        env: {},
+        stdin,
+        stdout,
+        timeoutMs: 50
+      })
+    ).resolves.toBe('light')
+
+    expect(setRawMode).toHaveBeenCalledWith(true)
+    expect(setRawMode).toHaveBeenCalledWith(false)
+    expect(getContributionMapTheme({}).contributionColors[0]).toBe('#ebedf0')
   })
 })
 
