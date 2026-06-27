@@ -1,5 +1,5 @@
 import { cleanup, render } from '@vue-tui/testing'
-import { afterEach, describe, expect, it } from 'vite-plus/test'
+import { afterEach, describe, expect, it, vi } from 'vite-plus/test'
 
 import CardApp from '../src/card-app.vue'
 import { avatarPngBase64 } from '../src/tui/assets/avatar.ts'
@@ -10,13 +10,46 @@ import {
   supportsKittyImageRendering
 } from '../src/tui/kitty-image.ts'
 
-afterEach(cleanup)
+afterEach(() => {
+  cleanup()
+  vi.restoreAllMocks()
+  vi.unstubAllGlobals()
+})
 
 describe('card app', () => {
   it('renders the profile screen sections', async () => {
-    const { lastFrame } = await render(CardApp)
+    let resolveFetch!: (response: Response) => void
+    const fetchPromise = new Promise<Response>(resolve => {
+      resolveFetch = resolve
+    })
+    const fetchMock = vi.fn<typeof fetch>(() => fetchPromise)
+
+    vi.stubGlobal('fetch', fetchMock)
+
+    const { lastFrame, waitUntilRenderFlush } = await render(CardApp)
+    const loadingOutput = lastFrame()
+
+    expect(loadingOutput).toContain('GitHub Contributions')
+    expect(loadingOutput).toContain('Fetching contributions...')
+
+    resolveFetch(
+      new Response(createContributionCalendarHtml(), {
+        status: 200
+      })
+    )
+    await waitUntilRenderFlush()
+    await waitUntilRenderFlush()
+
     const output = lastFrame()
 
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://github.com/users/liangmiQwQ/contributions',
+      expect.objectContaining({
+        headers: {
+          accept: 'text/html'
+        }
+      })
+    )
     expect(output).toContain('Liang')
     expect(output).toContain('@liangmiQwQ')
     expect(output).toContain('Student developer')
@@ -30,8 +63,9 @@ describe('card app', () => {
     expect(output).toContain('Projects')
     expect(output).toContain('voidzero-dev/vite-plus')
     expect(output).toContain('liangmiQwQ/vp-config')
-    expect(output).toContain('GitHub Contributions')
-    expect(output).toContain('53 x 7 placeholder')
+    expect(output).toContain('12 contributions in the last year')
+    expect(output).toContain('Less')
+    expect(output).toContain('More')
     expect(output).toContain('hi@liangmi.dev')
     expect(output).toContain('\u001B]8;;https://github.com/liangmiQwQ')
     expect(output).toContain('Press q or Esc to exit.')
@@ -39,6 +73,26 @@ describe('card app', () => {
     expect(output).not.toContain('╭')
   })
 })
+
+function createContributionCalendarHtml() {
+  const startDate = new Date(Date.UTC(2026, 5, 21))
+  const levels = [0, 1, 2, 3, 4, 1, 0, 2, 3, 4, 0, 1, 2, 3]
+  const days = levels
+    .map((level, index) => {
+      const date = new Date(startDate)
+      date.setUTCDate(startDate.getUTCDate() + index)
+
+      return `<td class="ContributionCalendar-day" data-date="${date.toISOString().slice(0, 10)}" data-level="${level}"></td>`
+    })
+    .join('')
+
+  return `
+    <h2 id="js-contribution-activity-description">
+      12 contributions in the last year
+    </h2>
+    <table>${days}</table>
+  `
+}
 
 describe('kitty image rendering', () => {
   it('builds chunked PNG transfer commands for virtual placements', () => {
