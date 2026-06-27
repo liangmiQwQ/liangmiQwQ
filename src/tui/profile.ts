@@ -1,11 +1,13 @@
+import { avatarPngBase64 } from './assets/avatar.ts'
+
 export interface Profile {
-  readonly avatar: readonly string[]
+  readonly bird: readonly string[]
   readonly nameArt: readonly string[]
+  readonly avatarPngBase64: string
   readonly name: string
   readonly handle: string
   readonly description: string
   readonly bio: string
-  readonly titles: readonly string[]
   readonly location: string
 }
 
@@ -21,13 +23,13 @@ export interface Contact {
 }
 
 export const profile: Profile = {
-  avatar: [
-    '  ########  ',
-    ' ##      ## ',
-    '##  LM    ##',
-    '##  QwQ   ##',
-    ' ##      ## ',
-    '  ########  '
+  bird: [
+    '  .`.   _ _ ',
+    '__;_ \\ /,//`',
+    '--, `._) (  ',
+    " '//,,,  |  ",
+    '      )_/   ',
+    '     /_|    '
   ],
   nameArt: [
     'LL       III     AAA    NN   NN   GGGG',
@@ -36,11 +38,11 @@ export const profile: Profile = {
     'LL        I    AA   AA  NN  NNN  GG  GG',
     'LLLLLL   III   AA   AA  NN   NN   GGGG'
   ],
+  avatarPngBase64,
   name: 'Liang',
   handle: 'liangmiQwQ',
   description: 'Student developer, active in JavaScript ecosystem, love open source!',
   bio: 'A bird that yearns for freedom can never be caged.',
-  titles: ['Vite+ Team Member'],
   location: 'Hangzhou, China'
 }
 
