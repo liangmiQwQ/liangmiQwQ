@@ -59,7 +59,7 @@ const contributionCells = computed(() =>
     <Text bold color="green">GitHub Contributions</Text>
     <Text dim-color>{{ statusText }}</Text>
 
-    <Box flex-direction="column" :margin-top="1" :gap="0">
+    <Box flex-direction="column" :margin-top="1" :margin-left="-1">
       <Text dim-color>{{ monthLabelLine }}</Text>
 
       <Box

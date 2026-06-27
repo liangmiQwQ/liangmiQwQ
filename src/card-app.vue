@@ -21,6 +21,7 @@ const { columns, rows } = useWindowSize()
   <Box
     flex-direction="column"
     :padding="1"
+    :padding-x="2"
     :height="rows"
     :width="columns"
     justify-content="space-between"
