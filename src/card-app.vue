@@ -27,7 +27,7 @@ const { columns, rows } = useWindowSize()
   >
     <ProfileHeader :profile="profile" />
 
-    <Box flex-direction="column" :flex-grow="1" justify-content="center" :padding-bottom="4">
+    <Box flex-direction="column" :flex-grow="1" justify-content="center" :padding-bottom="2">
       <ProjectsSection :projects="projects" />
     </Box>
 
