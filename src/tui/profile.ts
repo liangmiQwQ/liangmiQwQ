@@ -47,11 +47,26 @@ export const profile: Profile = {
 }
 
 export const projects: readonly Project[] = [
-  { name: 'voidzero-dev/vite-plus', description: '' },
-  { name: 'liangmiQwQ/mo', description: '' },
-  { name: 'liangmiQwQ/simple-introduce', description: '' },
-  { name: 'liangmiQwQ/vue-oxlint-toolkit', description: '' },
-  { name: 'liangmiQwQ/vp-config', description: '' }
+  {
+    name: 'voidzero-dev/vite-plus',
+    description: 'The united toolchain of JavaScript development. '
+  },
+  {
+    name: 'liangmiQwQ/mo',
+    description: 'Project manager for opensource developers using Github. '
+  },
+  {
+    name: 'liangmiQwQ/simple-introduce',
+    description: 'A useful tools to create Github profile image with animations. '
+  },
+  {
+    name: 'liangmiQwQ/vue-oxlint-toolkit',
+    description: `An experimental toolkit about Oxlint and Vue. `
+  },
+  {
+    name: 'liangmiQwQ/vp-config',
+    description: `Liang's united Vite+ config presets for JavaScript development. `
+  }
 ]
 
 export const contacts: readonly Contact[] = [
