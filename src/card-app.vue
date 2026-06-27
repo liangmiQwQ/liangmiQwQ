@@ -21,13 +21,14 @@ const { columns, rows } = useWindowSize()
   <Box
     flex-direction="column"
     :padding="1"
+    :padding-x="2"
     :height="rows"
     :width="columns"
     justify-content="space-between"
   >
     <ProfileHeader :profile="profile" />
 
-    <Box flex-direction="column" :flex-grow="1" justify-content="center" :padding-bottom="4">
+    <Box flex-direction="column" :flex-grow="1" justify-content="center" :padding-bottom="2">
       <ProjectsSection :projects="projects" />
     </Box>
 

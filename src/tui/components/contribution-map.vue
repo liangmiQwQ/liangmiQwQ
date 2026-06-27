@@ -2,36 +2,73 @@
 import { Box, Text } from '@vue-tui/runtime'
 import { computed } from 'vue'
 
+import { getContributionMapTheme } from '../terminal-theme.ts'
 import { useContributionMap } from '../use-contribution-map.ts'
 
-const { contributionRows } = useContributionMap()
+const { contributionCalendar, errorMessage, isLoading } = useContributionMap()
+const theme = getContributionMapTheme()
 
 const contributionCellText = '  '
+const skeletonWeekCount = 53
+
+const weekdayLabels = ['    ', 'Mon ', '    ', 'Wed ', '    ', 'Fri ', '    '] as const
+
+const skeletonRows = Array.from({ length: 7 }, (_, rowIndex) =>
+  Array.from({ length: skeletonWeekCount }, (_, columnIndex) => ({
+    date: `skeleton-${rowIndex}-${columnIndex}`,
+    level: 0 as const
+  }))
+)
+
+const visibleRows = computed(() =>
+  isLoading.value ? skeletonRows : contributionCalendar.value.rows
+)
+
+const statusText = computed(() => {
+  if (isLoading.value) {
+    return 'Fetching contributions...'
+  }
+
+  if (errorMessage.value) {
+    return errorMessage.value
+  }
+
+  return contributionCalendar.value.totalText || 'Contributions in the last year'
+})
+
+const monthLabelLine = computed(() => {
+  if (isLoading.value) {
+    return '    Loading calendar'
+  }
+
+  return contributionCalendar.value.monthLabelLine
+})
 
 const contributionCells = computed(() =>
-  contributionRows.value.map(row =>
-    Array.from(row, (level, column) => ({
-      key: `${column}-${level}`,
-      backgroundColor: contributionColors[level] ?? contributionColors[0]
+  visibleRows.value.map(row =>
+    row.map(day => ({
+      key: day.date,
+      backgroundColor: isLoading.value ? theme.skeletonColor : theme.contributionColors[day.level]
     }))
   )
 )
-
-const contributionColors = ['blackBright', 'green', 'greenBright', 'green', 'greenBright'] as const
 </script>
 
 <template>
   <Box flex-direction="column">
     <Text bold color="green">GitHub Contributions</Text>
-    <Text dim-color>53 x 7 placeholder</Text>
+    <Text dim-color>{{ statusText }}</Text>
 
-    <Box flex-direction="column" :margin-top="1" :gap="0">
+    <Box flex-direction="column" :margin-top="1" :margin-left="-1">
+      <Text dim-color>{{ monthLabelLine }}</Text>
+
       <Box
         v-for="(row, rowIndex) in contributionCells"
         :key="rowIndex"
         flex-direction="row"
         :gap="0"
       >
+        <Text dim-color>{{ weekdayLabels[rowIndex] }}</Text>
         <Text
           v-for="cell in row"
           :key="cell.key"
@@ -41,6 +78,19 @@ const contributionColors = ['blackBright', 'green', 'greenBright', 'green', 'gre
           {{ contributionCellText }}
         </Text>
       </Box>
+    </Box>
+
+    <Box flex-direction="row" :margin-top="1">
+      <Text dim-color>Less </Text>
+      <Text
+        v-for="color in theme.contributionColors"
+        :key="color"
+        :background-color="color"
+        aria-label="contribution legend level"
+      >
+        {{ contributionCellText }}
+      </Text>
+      <Text dim-color> More</Text>
     </Box>
   </Box>
 </template>
