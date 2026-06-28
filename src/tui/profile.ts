@@ -2,7 +2,6 @@ import { avatarPngBase64 } from './assets/avatar.ts'
 
 export interface Profile {
   readonly bird: readonly string[]
-  readonly nameArt: readonly string[]
   readonly avatarPngBase64: string
   readonly name: string
   readonly handle: string
@@ -30,13 +29,6 @@ export const profile: Profile = {
     " '//,,,  |  ",
     '      )_/   ',
     '     /_|    '
-  ],
-  nameArt: [
-    'LL       III     AAA    NN   NN   GGGG',
-    'LL        I     A   A   NNN  NN  GG   ',
-    'LL        I    AAAAAAA  NN N NN  GG GGG',
-    'LL        I    AA   AA  NN  NNN  GG  GG',
-    'LLLLLL   III   AA   AA  NN   NN   GGGG'
   ],
   avatarPngBase64,
   name: 'Liang',
