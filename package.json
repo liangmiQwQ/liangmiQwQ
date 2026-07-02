@@ -38,12 +38,12 @@
     "test": "vp run ctest run"
   },
   "dependencies": {
-    "@vue-tui/runtime": "^0.1.0",
-    "vue": "^3.5.38"
+    "@vue-tui/runtime": "^0.1.1",
+    "vue": "^3.5.39"
   },
   "devDependencies": {
     "@liangmi/vp-config": "^0.2.0",
-    "@types/node": "^26.0.0",
+    "@types/node": "^26.0.1",
     "@typescript/native-preview": "7.0.0-dev.20260624.1",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue-tui/testing": "^0.0.3",
