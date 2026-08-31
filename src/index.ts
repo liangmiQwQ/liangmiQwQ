@@ -27,9 +27,7 @@ await loadTerminalColorScheme()
 const app = createApp(CardApp)
 
 app.mount({
-  alternateScreen: true,
-  exitOnCtrlC: true,
-  rawMode: 'always'
+  exitOnCtrlC: true
 })
 
 await app.waitUntilExit()

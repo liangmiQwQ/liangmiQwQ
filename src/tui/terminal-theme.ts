@@ -196,7 +196,7 @@ function getRelativeLuminance(red: number, green: number, blue: number) {
 }
 
 function toLinearRgb(value: number) {
-  if (value <= 0.039_28) {
+  if (value <= 0.03928) {
     return value / 12.92
   }
 
