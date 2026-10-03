@@ -18,7 +18,7 @@ Vite+ is used as the project manager. Use `vp install` to install dependencies, 
 
 Run `vp check` (lint and format) after you make changes.
 
-Keep AGENTS.md updated with the project codebase. Consider if there is need to modify AGENTS.md after your changes. Don't store meaningless things like project structure or project status in AGENTS.md.
+If you find AGENTS.md is outdated, please notice users to change in response.
 
 Keep code functional. Never use classes. Write simple code and make function reusable if possible. Use Unix philosophy to design your code (Every function should only do one thing and should not be too long or complex).
 
