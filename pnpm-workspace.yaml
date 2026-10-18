@@ -1,7 +1,6 @@
 minimumReleaseAgeExclude:
-  - '@liangmi/vp-config@0.2.0'
-  - '@liangmi/vp-config@0.5.0'
-  - '@liangmi/vp-config@1.0.0'
+  # pnpm 11.5 matches package names here; this repository pins the requested 1.0.0 release.
+  - '@liangmi/vp-config'
 overrides:
   '@vue-tui/testing>@vue-tui/runtime': 0.1.0
   vite@*: 'catalog:'
