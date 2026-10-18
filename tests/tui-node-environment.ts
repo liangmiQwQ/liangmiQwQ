@@ -1,4 +1,4 @@
-import type { Environment } from 'vite-plus/test/environments'
+import type { Environment } from 'vite-plus/test/runtime'
 
 const tuiNodeEnvironment = {
   name: 'tui-node',

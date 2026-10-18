@@ -1,11 +1,11 @@
-import { cli } from '@liangmi/vp-config'
+import { liangmi } from '@liangmi/vp-config'
 import vue from '@vitejs/plugin-vue'
 
 function createVuePlugins() {
   return [vue()] as never
 }
 
-const config = cli({
+const config = await liangmi({
   staged: {
     '*': 'vp check --fix'
   },
@@ -22,6 +22,5 @@ const config = cli({
 })
 
 config.plugins = createVuePlugins()
-config.lint!.plugins = config.lint?.plugins?.filter(e => e !== 'react')
 
 export default config
